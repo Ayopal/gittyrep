@@ -2,6 +2,7 @@
 
 import React from "react";
 import { useState, useEffect } from "react";
+import { Outlet, useLocation } from "react-router-dom";
 
 import { LeftProfile, RightProfile } from "../components";
 
@@ -12,6 +13,8 @@ function Profile() {
 
 	const [currentPage, setCurrentPage] = useState(1);
 	const [reposPerPage] = useState(8);
+
+	const location = useLocation();
 
 	useEffect(() => {
 		fetchUser();
@@ -64,18 +67,24 @@ function Profile() {
 	return (
 		<div className='profile'>
 			<div className='profile-wrapper'>
-				<div className='left-profile'>
-					<LeftProfile user={user} />
-				</div>
+				{location.pathname === "/" ? (
+					<>
+						<div className='left-profile'>
+							<LeftProfile user={user} />
+						</div>
 
-				<div className='right-profile'>
-					<RightProfile
-						currentRepos={currentRepos}
-						numberOfPages={numberOfPages}
-						currentPage={currentPage}
-						setCurrentPage={setCurrentPage}
-					/>
-				</div>
+						<div className='right-profile'>
+							<RightProfile
+								currentRepos={currentRepos}
+								numberOfPages={numberOfPages}
+								currentPage={currentPage}
+								setCurrentPage={setCurrentPage}
+							/>
+						</div>
+					</>
+				) : (
+					<Outlet />
+				)}
 			</div>
 		</div>
 	);
