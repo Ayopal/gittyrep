@@ -12,7 +12,7 @@ function Profile() {
 				</div>
 
 				<div className="right-profile">
-					{/* <RightProfile /> */}
+					<RightProfile />
 				</div>
 			</div>
 		</div>

@@ -137,8 +137,12 @@ input {
 	padding: 20px 0px;
 }
 
+profile-sec h1 {
+  margin-bottom: 60px;
+}
+
 .profile-wrapper {
-	font-size: 16px;
+	font-size: 20px;
 	display: flex;
 	flex-direction: row;
 	justify-content: space-between;
@@ -167,10 +171,11 @@ input {
 	height: 100%;
 	display: flex;
 	flex-direction: column;
-	justify-content: center;
-	align-items: center;
+	justify-content: start;
+	align-items: start;
 	background: #e9f3fc;
-	color: red;
+	color: #fff;
+  padding: 20px;
 }
 
 .profile-img {
@@ -219,4 +224,27 @@ input {
 
 .git-des {
 	margin-bottom: 20px;
+}
+
+
+.rightwrapper {
+  width: 300px;
+  background: #002147;
+  border: 1px solid #000;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.icons {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  margin-top: 20px;
 }
