@@ -31,12 +31,12 @@ function Repo() {
 
 	// console.log(name);
 	return (
-		<div>
+		<div className='singleRepo'>
 			<h1>Single Repo</h1>
 			<div>
 				<h3>Name: {repo.name}</h3>
 				<p>Fork: {repo.forks}</p>
-				<p>Fork: {repo.language}</p>
+				<p>Language: {repo.language}</p>
 				<p>File Size: {repo.size}kb</p>
 				<p>visibility : {repo.visibility}</p>
 				<p>watchers : {repo.watchers}</p>

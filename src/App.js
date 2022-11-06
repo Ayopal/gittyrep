@@ -9,7 +9,8 @@ import {
 	Navigate,
 } from "react-router-dom";
 import { Navbar } from "./components";
-import { Home, About, NotFound, Profile, Repo } from "./pages";
+import { Home, About, NotFound, Profile, Repo, Error  } from "./pages";
+
 
 function App() {
 	return (
@@ -23,7 +24,7 @@ function App() {
 							<Route path='/repo/:name' element={<Repo />} />
 						</Route>
 
-						<Route path='/about' element={<Profile />} />
+						<Route path='/error' element={<Error />} />
 						<Route path='/not-found' element={<NotFound />} />
 						<Route path='*' element={<Navigate to='/not-found' />}></Route>
 					</Routes>

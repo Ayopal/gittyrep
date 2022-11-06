@@ -9,7 +9,7 @@ function Navbar() {
 		<header className='header'>
 			<div className='logo'>
 				<img src={logo} alt='logo' />
-				<h2 className='logoName' element = "<Navigate to='/home' />">
+				<h2 className='logoName' element="<Navigate to='/home' />">
 					Gear~Git...
 				</h2>
 			</div>
@@ -18,11 +18,9 @@ function Navbar() {
 				<li>
 					<Link to='/'>Home</Link>
 				</li>
+
 				<li>
-					<Link to='/profile'>About</Link>
-				</li>
-				<li>
-					<Link to='/errrorboundary'>Error Boundary</Link>
+					<Link to='/error'>Error Boundary</Link>
 				</li>
 			</ul>
 		</header>
