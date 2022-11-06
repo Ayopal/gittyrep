@@ -5,24 +5,24 @@ import ellipse from "../img/Ellipse.png";
 import locate from "../img/Location.png";
 import link from "../img/link.png";
 import gmail from "../img/Message.png";
-import user from "../img/User.png";
+import following from "../img/User.png";
 import users from "../img/Users.png";
 import doc from "../img/Document.png";
 import edit from "../img/Edit.png";
 
-function LeftProfile() {
+function LeftProfile({ user }) {
 	return (
 		<div className='Lprofile-wrapper'>
 			<div className='profile-sec'>
-				<h1>repo</h1>
-				<img src={ellipse} className='profile-img' />
+				{/* <h1>repo</h1> */}
+				<img src={user.avatar_url} className='profile-img' />
 			</div>
-			<p className='git-username'> Ayopal10 </p>
-			<p className='git-des'> Just Existing.......... </p>
+			<p className='git-username'>{user.name} </p>
+			<p className='git-des'> {user.bio}</p>
 
 			<div className='info'>
 				<img src={locate} alt='' />
-				<p className='info-state'>Lagos, Nigeria </p>
+				<p className='info-state'>{user.location}</p>
 			</div>
 
 			<div className='info'>
@@ -34,50 +34,47 @@ function LeftProfile() {
 
 			<div className='info'>
 				<img src={gmail} alt='' />
-				<p className='info-gmail'> Ayopaul@gmail.com </p>
+				<p className='info-gmail'> {user.email} </p>
 			</div>
 
-            <div className="fwrapper">
-
-			<div className='follow'>
-
-				<div className='infos'>
-					<div>
-						<p>Followers</p>
-						<p>1200</p>
+			<div className='fwrapper'>
+				<div className='follow'>
+					<div className='infos'>
+						<div>
+							<p>Followers</p>
+							<p>{user.followers}</p>
+						</div>
+						<img src={users} alt='' />
 					</div>
-					<img src={users} alt='' />
+
+					<div className='infos'>
+						<div>
+							<p>Following</p>
+							<p>{user.following}</p>
+						</div>
+						<img src={following} alt='' />
+					</div>
 				</div>
 
-				<div className='infos'>
-					<div>
-						<p>Following</p>
-						<p>1200</p>
+				<div className='follow'>
+					<div className='infos'>
+						<div>
+							<p>Public Repo</p>
+							<p>{user.public_repos}</p>
+						</div>
+						<img src={doc} alt='' />
 					</div>
-					<img src={user} alt='' />
-				</div>
 
-			</div>
-
-			<div className='follow'>
-				<div className='infos'>
-					<div>
-						<p>Public Repo</p>
-						<p>25</p>
+					<div className='infos'>
+						<div>
+							<p>Public Gist</p>
+							<p>{user.public_gists}</p>
+						</div>
+						<img src={edit} alt='' />
 					</div>
-					<img src={doc} alt='' />
-				</div>
-
-				<div className='infos'>
-					<div>
-						<p>Public Gist</p>
-						<p>25</p>
-					</div>
-					<img src={edit} alt='' />
 				</div>
 			</div>
 		</div>
-        </div>
 	);
 }
 

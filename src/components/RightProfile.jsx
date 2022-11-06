@@ -1,31 +1,45 @@
 /** @format */
 
 import React from "react";
+import Pagination from "./Pagination";
+import { Link } from "react-router-dom";
 import fork from "../img/GitFork.png";
 import star from "../img/Star.png";
 
-function RightProfile() {
+function RightProfile({
+	currentRepos,
+	numberOfPages,
+	currentPage,
+	setCurrentPage,
+}) {
 	return (
-        <div className="rightwrapper">
-            <div className="card">
-                <div>
-                <h2>User's Page'</h2>
-                </div>
+		<div className='right-wrapper-container'>
+			<div className='rightwrapper'>
+				{currentRepos.map((repo) => (
+					<Link to={`repo/${repo.name}`} key={repo.id}>
+						<div className='card'>
+							<div>
+								<h2>{repo.name}</h2>
+							</div>
 
-                <p>
-                    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Distinctio debitis ullam non eaque similique magni earum ut doloribus nihil doloremque.
-                </p>
+							<p>{repo.description}</p>
 
-<div className="icons">
-        <img src={fork} alt="" />
-        <img src={star} alt="" />
-        <p>public</p>
-
-</div>
-
-            </div>
-        </div>
-    );
+							<div className='icons'>
+								<img src={fork} alt='' />
+								<img src={star} alt='' />
+								<p>public</p>
+							</div>
+						</div>
+					</Link>
+				))}
+			</div>
+			<Pagination
+				numberOfPages={numberOfPages}
+				currentPage={currentPage}
+				setCurrentPage={setCurrentPage}
+			/>
+		</div>
+	);
 }
 
 export default RightProfile;
