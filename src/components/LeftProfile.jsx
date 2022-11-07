@@ -28,7 +28,7 @@ function LeftProfile({ user }) {
 			<div className='info'>
 				<img src={link} alt='' />
 				<a className='info-potfolio' href='/'>
-					Khalidola.netlify.app
+					https://www.linkedin.com/in/paul-ayoola-7129a714b
 				</a>
 			</div>
 
