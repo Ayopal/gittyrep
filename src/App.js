@@ -9,7 +9,7 @@ import {
 	Navigate,
 } from "react-router-dom";
 import { Navbar } from "./components";
-import { Home, About, NotFound, Profile, Repo, Error  } from "./pages";
+import { NotFound, Profile, Repo, Error } from "./pages";
 
 
 function App() {

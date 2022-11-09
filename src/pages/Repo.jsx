@@ -32,17 +32,20 @@ function Repo() {
 	// console.log(name);
 	return (
 		<div className='singleRepo'>
-			<h1>Single Repo</h1>
+			<h1>Repo Data</h1>
 			<div>
 				<h3>Name: {repo.name}</h3>
-				<p>Fork: {repo.forks}</p>
-				<p>Language: {repo.language}</p>
-				<p>File Size: {repo.size}kb</p>
-				<p>visibility : {repo.visibility}</p>
-				<p>watchers : {repo.watchers}</p>
-				<p>open issues : {repo.open_issues}</p>
-				<p>created_at : {repo.created_at}</p>
-				<button>
+				<div className='singleInfo'>
+					<p className='data'>Branch: {repo.default_branch}</p>
+					<p className='data'>Fork: {repo.forks}</p>
+					<p className='data'>Language: {repo.language}</p>
+					<p className='data'>File Size: {repo.size}kb</p>
+					<p className='data'>visibility : {repo.visibility}</p>
+					<p className='data'>watchers : {repo.watchers}</p>
+					<p className='data'>open issues : {repo.open_issues}</p>
+					<p className='data'>created_at : {repo.created_at}</p>
+				</div>
+				<button className="viewgit">
 					<a target='_blank' rel='noreferrer' href={repo.html_url}>
 						view on github
 					</a>

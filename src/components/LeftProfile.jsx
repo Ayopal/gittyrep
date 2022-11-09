@@ -34,7 +34,7 @@ function LeftProfile({ user }) {
 
 			<div className='info'>
 				<img src={gmail} alt='' />
-				<p className='info-gmail'> {user.email} </p>
+				<p className='info-gmail'> Ayopaul19@gmail.com </p>
 			</div>
 
 			<div className='fwrapper'>

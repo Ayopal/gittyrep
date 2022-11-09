@@ -195,10 +195,15 @@ profile-sec h1 {
 	text-align: left;
 	margin: 10px 0;
   font-size: 14px;
+  color: #fff;
+}
+
+.info-potfolio {
+	color: #fff;
 }
 
 .fwrapper {
-	margin-top: 30px;
+margin-top: 30px;
   font-size: 16px;
 }
 
@@ -241,15 +246,17 @@ profile-sec h1 {
 }
 
 .rightwrapper {
- 
-  /* display: flex; */
-  /* flex-direction: column; */
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   justify-content: center;
   align-items: center;
   gap: 10px;
- 
+	animation: myAnim 2s ease 0s 1 normal forwards;
+
+}
+
+.card:nth-child(even) {
+	  background: red;
 }
 
 .card {
@@ -259,17 +266,60 @@ profile-sec h1 {
  flex-direction: column;
  justify-content: space-between;
  overflow: auto;
-  background: #b9dbe6; 
+  /* background: #;  */
+  color: #002147;
+  font-size: 16px;
   border: 1px solid #000;
   padding: 30px;
   border-radius: 10px;
   box-shadow: -1px 3px 19px 0px rgba(12, 12, 15, 0.2);
 	-webkit-box-shadow: -1px 3px 19px 0px rgba(12, 12, 15,0.2);
 	-moz-box-shadow: -1px 3px 19px 0px rgba(12, 12, 15, 0.2);
+	transition: all 0.5s ease-in-out;
 }
 
 
-.::-webkit-scrollbar {
+
+.card:hover{
+  transform: scale(1.1);
+ box-shadow: -1px -1px 13px 3px rgba(0,0,0,0.59);
+-webkit-box-shadow: -1px -1px 13px 3px rgba(0,0,0,0.59);
+-moz-box-shadow: -1px -1px 13px 3px rgba(0,0,0,0.59);
+border: 3px yellow dotted;
+margin-top: 5px;
+z-index: 10000;
+}
+
+@keyframes myAnim {
+	0%,
+	100% {
+		transform: translateX(0);
+	}
+
+	10%,
+	30%,
+	50%,
+	70% {
+		transform: translateX(-10px);
+	}
+
+	20%,
+	40%,
+	60% {
+		transform: translateX(10px);
+	}
+
+	80% {
+		transform: translateX(8px);
+	}
+
+	90% {
+		transform: translateX(-8px);
+	}
+}
+
+
+.card::-webkit-scrollbar {
   display: none;
 }
 
@@ -309,6 +359,7 @@ profile-sec h1 {
   cursor: pointer;
   border-radius: 10px;
   transition: all 0.3s ease;
+  background: #002147;
 }
 
 .pagination-child:hover,
@@ -318,9 +369,13 @@ profile-sec h1 {
 }
 
 .disabled {
-  opacity: 0.5;
+  opacity: 0.3;
+  padding: 4px 8px;
+  border-radius: 10px;
+
+ background: grey;
   cursor: not-allowed;
-}
+  }
 
 
 .singleRepo {
@@ -337,3 +392,166 @@ profile-sec h1 {
 .git-des{
   font-size: 14px;
 }
+
+
+
+
+.singleRepo {
+	width: 100%;
+	background: #e9f3fc;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	animation: myAnim 2s ease 0s 1 normal forwards;
+
+}
+
+
+.singleRepo h1 {
+	font-size: 60px;
+	color: #002147;
+}
+
+
+.singleRepo h3 {
+	font-size: 40px;
+	color: #000;
+	margin-bottom: 20px;
+}
+
+.data {
+	background: red;
+	border-radius: 50px 0;
+	padding: 30px 30px;
+	text-align: center;
+	  box-shadow: -1px 3px 19px 0px rgba(12, 12, 15, 0.2);
+	-webkit-box-shadow: -1px 3px 19px 0px rgba(12, 12, 15,0.2);
+	-moz-box-shadow: -1px 3px 19px 0px rgba(12, 12, 15, 0.7);
+}
+
+
+@keyframes myAnim {
+	0%,
+	100% {
+		transform: translateX(0);
+	}
+
+	10%,
+	30%,
+	50%,
+	70% {
+		transform: translateX(-10px);
+	}
+
+	20%,
+	40%,
+	60% {
+		transform: translateX(10px);
+	}
+
+	80% {
+		transform: translateX(8px);
+	}
+
+	90% {
+		transform: translateX(-8px);
+	}
+}
+
+
+.data:nth-child(even) {
+	background: #c49766;
+	color: #002147;
+	font-weight: bold;
+}
+
+.data:nth-child(odd) {
+	font-weight: bold;
+	background: #002147;
+	color: #c49766;
+}
+
+
+.singleInfo {
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	gap: 20px;
+}
+
+.viewgit {
+	display: block;
+	padding: 10px 20px;
+	border-radius: 5px;
+	outline: none;
+	border: none;
+	background:  #c49766;
+	font-size: 18px;
+	font-weight: bold;
+	margin: 50px auto;
+	text-decoration: none;
+	transition: all 0.3s ease;
+}
+
+.viewgit a {
+	color: #fff;
+}
+
+.viewgit:hover {
+	transform: scale(1.1);
+}
+
+.error {
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%);
+}
+
+
+
+/* mobile view */
+
+@media screen and (max-width: 768px) {
+
+
+
+	.info {
+	display: flex;
+	flex-direction: column;
+	}
+
+	.profile{
+		overflow: scroll;
+		display: flex;
+		flex-direction: column;
+	}
+
+	.left-profile {
+		width: 50%;
+		overflow-y: scroll;
+		height: 100vh;
+	}
+
+	.right-profile {
+		width: 50%;
+		display: flex;
+		flex-direction: column;
+		height: 100vh;
+
+	}
+
+	.rightwrapper {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+overflow-y: scroll;
+
+}
+	
+
+
+}
+	
